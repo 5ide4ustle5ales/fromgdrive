@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+body {
+background-color: #f3e5dc;
+      }
+.board {
+ display: grid;
+grid-template-columns: repeat(3, 1fr);grid-template-rows: repeat(3, 1fr);
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        background-color: lightgreen;
+      }
+      .cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+        font-weight: bold;
+        border: 2px solid black;
+      }
+      .reset-button {
+        margin: 20px auto;
+        width: 25%;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: bold;
+      		font: emerald;
+        background-color: darkred;
+        border: 55px gold;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  		.O{
+  				background-color: blue;
+  		}
+  		.X{
+  				background-color: red;
+  		}
+    </style>
+    <script>
+      // JavaScript code for gam logic
+
+      // Variables to track the current player and the game state
+      var currentPlayer = "X";
+      var gameEnded = false;
+
+      // Function to handle the cell click event
+      function cellClicked(cell) {
+        // If the game has already ended or the cell is already marked, do nothing
+        if (gameEnded || cell.innerText !== "") return;
+
+       
+        cell.innerText = currentPlayer;
+
+        // Check for a winner
+        if (checkWin()) {
+          // If there is a winner, display a message and end the game
+          alert("Player " + currentPlayer + " wins!");
+          gameEnded = true;
+          return;
+        }
+
+        // Check for a tie
+        if (checkTie()) {
+          // If there is a tie, display a message and end the game
+          alert("It's a tie!");
+          gameEnded = true;
+          return;
+        }
+
+        // Switch to the next player
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+      }
+
+      // Function to check for a winning combination
+      function checkWin() {
+        var cells = document.getElementsByClassName("cell");
+
+        // All possible winning combinations
+        var winCombinations = [
+          [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+          [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+          [0, 4, 8], [2, 4, 6] // Diagonals
+        ];
+
+        for (var i = 0; i < winCombinations.length; i++) {
+          var combo = winCombinations[i];
+          if (
+            cells[combo[0]].innerText === currentPlayer &&
+            cells[combo[1]].innerText === currentPlayer &&
+            cells[combo[2]].innerText === currentPlayer
+          ) {
+            return true; // Found a winning combination
+          }
+        }
+
+        return false; // No winning combination found
+      }
+
+      // Function to check for a tie (full board with no winner)
+      function checkTie() {
+        var cells = document.getElementsByClassName("cell");
+        for (var i = 0; i < cells.length; i++) {
+          if (cells[i].innerText === "") {
+            return false; // Found an empty cell, the game is not a tie
+          }
+        }
+        return true; // All cells are filled, the game is a tie
+      }
+
+      // Function to reset the board
+      function resetBoard() {
+        var cells = document.getElementsByClassName("cell");
+        for (var i = 0; i < cells.length; i++) {
+          cells[i].innerText = ""; // Clear the content of each cell
+        }
+        currentPlayer = "X"; // Reset the current player
+        gameEnded = false; // Reset the game state
+      }
+    </script>
+  </head>
+  <body>
+    <div class="board">
+      <div class="cell" onclick="cellClicked(this)"></div>
+      <div class="cell" onclick="cellClicked(this)"></div>
+      <div class="cell" onclick="cellClicked(this)"></div>
+      <div class="cell" onclick="cellClicked(this)"></div>
+      <div class="cell" onclick="cellClicked(this)"></div>
+      <div class="cell" onclick="cellClicked(this)"></div>
+      <div class="cell" onclick="cellClicked(this)"></div>
+      <div class="cell" onclick="cellClicked(this)"></div>
+      <div class="cell" onclick="cellClicked(this)"></div>
+    		<div class=""
+    </div>
+    <button class="reset-button" onclick="resetBoard()">Reset</button>
+    		
+  </body>
+</html>

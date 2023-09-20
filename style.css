@@ -1,0 +1,40 @@
+
+body {
+  background-color: goldenrod;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  background-color: #39ff14;
+  color: black;
+  border: 2px #39ff14;
+  box-shadow: 0 0 8px 3px yellowgreen;
+}}
+
+@keyframes wheelAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+a {
+  color: green;
+}
+
+h1 {
+  color: blueviolet;
+  font-size: 23px;
+}
+
+h2 {
+  color: plum;
+    font-size: 23px;
+}
+
+p { color: aquamarine;
+     font-size: 23px;
+}

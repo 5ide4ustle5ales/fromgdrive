@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dark Grey Table</title>
+  <style>
+		
+
+.wheel {
+  width: 200px;
+  height: 200px;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+		body {
+      background-color: darkgrey;
+      color: silver;
+      font-family: Arial, sans-serif;
+    }
+    
+    table {
+      margin: 50px auto;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 10px;
+      border: 1px solid silver;
+    }
+    
+    th {
+      background-color: black;
+    }
+    
+    td {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+		<div class="wheel"></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+        <th>Column 5</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1</td>
+        <td>Row 1</td>
+        <td>Row 1</td>
+        <td>Row 1</td>
+        <td>Row 1</td>
+      </tr>
+      <tr>
+        <td>Row 2</td>
+        <td>Row 2</td>
+        <td>Row 2</td>
+        <td>Row 2</td>
+        <td>Row 2</td>
+      </tr>
+      <tr>
+        <td>Row 3</td>
+        <td>Row 3</td>
+        <td>Row 3</td>
+        <td>Row 3</td>
+        <td>Row 3</td>
+      </tr>
+      <tr>
+        <td>Row 4</td>
+        <td>Row 4</td>
+        <td>Row 4</td>
+        <td>Row 4</td>
+        <td>Row 4</td>
+      </tr>
+      <tr>
+        <td>Row 5</td>
+        <td>Row 5</td>
+        <td>Row 5</td>
+        <td>Row 5</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+```
+
+In this code, the table has 5 columns labeled as "Column 1" to "Column 5" in the table header (`<th>`), and 5 rows labeled as "Row 1" to "Row 5" in the table body (`<tbody>`). The table has a dark grey background color, silver border, and the table header cells have a black background color, while the table data cells have a dark green background color.

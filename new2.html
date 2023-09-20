@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spinning Wheel</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="wheel" id="wheel">
+      <div class="number" id="number-0">0</div>
+      <!-- Add the remaining numbers here -->
+      <div id="pointer"></div>
+    </div>
+    <button id="spin-button">Spin</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.wheel {
+  width: 400px;
+  height: 400px;
+  background: darkgrey;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.number {
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+#pointer {
+  width: 6px;
+  height: 80px;
+  background: black;
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+```
+
+3. JavaScript Logic (script.js):
+```javascript
+/
+```
+
+Remember to save the HTML, CSS, and JavaScript files as `index.html`, `style.css`, and `script.js` respectively in the same directory. Open the HTML file in a web browser, and you will see a spinning wheel with numbers from 1 to 37 on it. Clicking the "Spin" button will rotate the wheel randomly until it stops at one of the numbers, displaying an alert with the chosen number.
+
+
+
+
+
+
+
+To create an HTML page with a fully working spinning wheel that includes the numbers 1-37 and a button to spin the wheel, you can follow these steps:
+
+1. HTML Structure:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spinning Wheel</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="wheel" id="wheel">
+      <div class="number" id="number-0">0</div>
+      <!-- Add the remaining numbers here -->
+      <div id="pointer"></div>
+    </div>
+    <button id="spin-button">Spin</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+2. CSS Styling (style.css):
+```css
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.wheel {
+  width: 400px;
+  height: 400px;
+  background: darkgrey;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.number {
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+#pointer {
+  width: 6px;
+  height: 80px;
+  background: black;
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+```
+
+3. JavaScript Logic (script.js):
+```javascript
+// Get the wheel element
+const wheel = document.getElementById('wheel');
+// Set the initial angle and speed of rotation
+let angle = 0;
+let speed = 0;
+
+// Function to rotate the wheel
+function rotateWheel() {
+  const pointer = document.getElementById('pointer');
+  
+  // Randomly select a number from 1 to 37
+  const randomNum = Math.floor(Math.random() * 37) + 1;
+  
+  // Calculate the final rotation angle
+  const rotateAngle = 3600 + (randomNum * (360 / 37));
+  
+  // Set the rotation speed
+  speed = 5;
+  
+  // Rotate the wheel continuously until the rotation is complete
+  const rotation = setInterval(() => {
+    if (angle >= rotateAngle) {
+      clearInterval(rotation);
+      speed = 0;
+      alert('The wheel stopped at ' + randomNum);
+    } else {
+      angle += speed;
+      wheel.style.transform = `rotate(${angle}deg)`;
+    }
+  }, 16);
+}
+
+// Event listener for the spin button
+const spinButton = document.getElementById('spin-button');
+spinButton.addEventListener('click', rotateWheel);
+```
+
+Remember to save the HTML, CSS, and JavaScript files as `index.html`, `style.css`, and `script.js` respectively in the same directory. Open the HTML file in a web browser, and you will see a spinning wheel with numbers from 1 to 37 on it. Clicking the "Spin" button will rotate the wheel randomly until it stops at one of the numbers, displaying an alert with the chosen number.

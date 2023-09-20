@@ -1,0 +1,146 @@
+To change the `onclick` attribute of the `btnBet` button to call the `rotateColors` function, you can modify the HTML code as follows:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/buttongame.css"/>
+  <title>BUTTON GAME!</title>
+  <script src="scripts/buttongame.js">
+		</script>
+</head>
+<body>
+  <h1>BUTTON GAME!!</h1>
+  <table>
+    <tr>
+      <td class="gray"></td>
+      <td class="gray">
+        <button class="btn4" id="btn4" onclick="changeColorAndDisplayMessage(event)">button50x</button>
+      </td>
+      <td class="gray">
+        <div id="message"></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="gray">
+        <button class="btn3" id="btn3" onclick="changeColorAndDisplayMessage(event)">button5x</button>
+      </td>
+      <td id="btnBet">
+        <button class="btnBet" id="btnBet" onclick="rotateColors()">bet</button>
+      </td>
+      <td class="gray">
+        <button class="btn" id="btn1" onclick="changeColorAndDisplayMessage(event)">button2x</button>
+      </td>
+    </tr>
+    <tr>
+      <td class="gray"></td>
+      <td class="gray">
+        <button class="btn2" id="btn2" onclick="changeColorAndDisplayMessage(event)">button3x</button>
+      </td>
+      <td class="gray">
+        <button id="spinButton" onclick="rotateColors()">Spin</button>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+```
+
+In this updated code:
+
+- The `onclick` attribute of the `btnBet` button is changed to call the `rotateColors` function.
+- Now, both the `spinButton` and `btnBet` buttons will trigger the `rotateColors` function when clicked.
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/buttongame.css"/>
+  <title>BUTTON GAME!</title>
+  <script src="scripts/buttongame.js"></script>
+</head>
+<body>
+  <h1>BUTTON GAME!!</h1>
+  <table>
+    <tr>
+      <td class="gray"></td>
+      <td class="gray">
+        <button class="btn4" id="btn4" onclick="changeColorAndDisplayMessage(event)">button50x</button>
+      </td>
+      <td class="gray">
+        <div id="message"></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="gray">
+        <button class="btn3" id="btn3" onclick="changeColorAndDisplayMessage(event)">button5x</button>
+      </td>
+      <td id="btnBet">
+        <button class="btnBet" id="btnBet" onclick="btnBet()">bet</button>
+      </td>
+      <td class="gray">
+        <button class="btn" id="btn1" onclick="changeColorAndDisplayMessage(event)">button2x</button>
+      </td>
+    </tr>
+    <tr>
+      <td class="gray"></td>
+      <td class="gray">
+        <button class="btn2" id="btn2" onclick="changeColorAndDisplayMessage(event)">button3x</button>
+      </td>
+      <td class="gray"></td>
+    </tr>
+  </table>
+</body>
+</html>
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/buttongame.css"/>
+  <title>BUTTON GAME!</title>
+ <script src="scripts/buttongame.js"/>
+</script>
+</head>
+<body>
+  <h1>
+    BUTTON GAME!!
+  </h1>
+ 
+		---‐----------------------------'
+<button class='btn' id='btn1' onclick='twoTimes()'>button2x</button>,
+<button class='btn2' id='btn2' onclick="threeTimes()" >button3x</button>
+<button class='btn3' id='btn3' onclick='fiveTimes()' >button5x</button>
+<button class='btn4' id='btn4' onclick='fiftyTimes()' >button50x</button>
+ -----'zzzzzzzzzxzzzzzzzzzx
+<table>
+  <tr>
+    <td class="gray"></td>
+    <td class="gray"><button class='btn4' id='btn4' onclick='fiftyTimes()' >button50x</button>
+    </td>
+    <td class="gray">  <div id="message"></div></td>
+  </tr>
+  <tr>
+    <td class="gray">
+    		<button class='btn3' id='btn3' onclick='fiveTimes()' >button5x</button>
+    </td>
+    <td id="btnBet"><button class="btnBet" id='btnBet'onclick="btnBet()">bet</button></td>
+    <td class="gray"><button class='btn' id='btn1' onclick='twoTimes()'>button2x</button>
+    </td>
+  </tr>
+  <tr>
+    <td class="gray"></td>
+    <td class="gray"><button class='btn2' id='btn2' onclick='threeTimes()' >button3x</button>
+    </td>
+    <td class="gray"></td>
+  </tr>
+</table>
+		</body>
+</html>
+-->
